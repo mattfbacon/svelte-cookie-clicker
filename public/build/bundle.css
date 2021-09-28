@@ -1,0 +1,7 @@
+.svelte-winei8.svelte-winei8{user-select:none;-webkit-user-drag:none}button.svelte-winei8.svelte-winei8{margin:0;padding:0;background:none;border:none;transition:transform .1s ease;position:relative}button.svelte-winei8 img.svelte-winei8{max-width:60vw;max-height:90vh;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}button.svelte-winei8.svelte-winei8:focus{outline:none}button.svelte-winei8.svelte-winei8:hover{transform:scale(1.03)}button.svelte-winei8:focus img.svelte-winei8{filter:drop-shadow(0px 0px 5px darkorange)}button.svelte-winei8.svelte-winei8:active{transform:scale(0.97)}button.focus-active.svelte-winei8.svelte-winei8:focus{transform:scale(0.97)}.hidden.svelte-1e03ziv.svelte-1e03ziv:not(.semihidden){display:none}.semihidden.svelte-1e03ziv td.svelte-1e03ziv{font-size:0}.semihidden.svelte-1e03ziv button.svelte-1e03ziv{display:none}.semihidden.svelte-1e03ziv td.svelte-1e03ziv::before{content:"????";font-size:1rem}main.svelte-gsfym5{height:100%;width:100%;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr auto 1fr max-content;grid-auto-flow:column;gap:.3rem 1rem;grid-template-areas:"title ."
+		"subtitle items-title"
+		"cookie items"
+		"cookie upgrades-title"
+		"cookie upgrades"
+		"sesame sesame"
+	;text-align:center;align-items:start}#cookie-container.svelte-gsfym5{align-self:stretch;display:flex;justify-content:center;align-items:center}
