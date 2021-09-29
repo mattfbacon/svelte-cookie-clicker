@@ -37,7 +37,7 @@
 </thead>
 <tbody>
 {#each $items as itemAmount, idx}
-<tr class:hidden={isHidden(idx, itemAmount)} class:semihidden={isSemiHidden(idx, itemAmount)}>
+<tr class:hidden={!$sesameOpened && isHidden(idx, itemAmount)} class:semihidden={!$sesameOpened && isSemiHidden(idx, itemAmount)}>
 	<td>{floatToString(itemAmount)}</td>
 	<td>{itemData[idx].name}</td>
 	<td>{floatToString(calculateCurrentPrice(itemData[idx], itemAmount))}</td>
