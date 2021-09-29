@@ -5,7 +5,6 @@
 
 	import Cookie from './Cookie.svelte';
 	import Items from './Items.svelte';
-	import Sesame from './Sesame.svelte';
 
 	setInterval(() => {
 		cookies.increment(itemCps.get());
@@ -13,14 +12,18 @@
 </script>
 
 <main>
-	<h2 style="grid-area:title;">{floatToString($cookies)} Cookie{$cookies == 1 ? '' : 's'}</h2>
+	<h2 style="grid-area:title;">
+		{#if $sesameOpened}
+			<input type="number" bind:value={$cookies}>
+		{:else}
+			<span>{floatToString($cookies)}</span>
+		{/if}
+		<span> Cookie{$cookies == 1 ? '' : 's'}</span>
+	</h2>
 	<h5 style="grid-area:subtitle;align-self:baseline;">{floatToString($itemCps)} CPS from upgrades</h5>
 	<div style="grid-area:cookie;" id="cookie-container"><Cookie /></div>
 	<h3 style="grid-area:items-title;align-self:baseline;">Items</h3>
 	<div style="grid-area:items;"><Items /></div>
-	{#if $sesameOpened}
-	<div transition:slide style="grid-area:sesame;"><Sesame /></div>
-	{/if}
 </main>
 
 <style>
@@ -38,7 +41,6 @@ main {
 		"cookie items"
 		"cookie upgrades-title"
 		"cookie upgrades"
-		"sesame sesame"
 	;
 	text-align: center;
 	align-items: start;

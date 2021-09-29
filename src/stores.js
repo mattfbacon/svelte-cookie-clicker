@@ -31,6 +31,12 @@ export const items = {
 			xs[item_idx] = xs[item_idx] + amount;
 			return xs;
 		});
+	},
+	setItem(item_idx, amount) {
+		_items.update(xs => {
+			xs[item_idx] = amount;
+			return xs;
+		});
 	}
 };
 

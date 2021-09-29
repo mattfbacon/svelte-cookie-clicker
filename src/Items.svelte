@@ -1,5 +1,5 @@
 <script>
-	import { cookies, items } from './stores.js';
+	import { cookies, items, sesameOpened, } from './stores.js';
 	import itemData, { calculateCurrentPrice } from './ItemData.js';
 	import { floatToString } from './Util.js';
 
@@ -41,7 +41,13 @@
 	<td>{floatToString(itemAmount)}</td>
 	<td>{itemData[idx].name}</td>
 	<td>{floatToString(calculateCurrentPrice(itemData[idx], itemAmount))}</td>
-	<td><button on:click="{() => makePurchase(idx, itemAmount)}" disabled={calculateCurrentPrice(itemData[idx], itemAmount) > $cookies}>Buy</button></td>
+	<td>
+		{#if $sesameOpened}
+			<input type="number" value={itemAmount} on:input={(e) => items.setItem(idx, parseInt(e.target.value, 10) || 0)}>
+		{:else}
+			<button on:click="{() => makePurchase(idx, itemAmount)}" disabled={calculateCurrentPrice(itemData[idx], itemAmount) > $cookies}>Buy</button>
+		{/if}
+	</td>
 </tr>
 {/each}
 </tbody>
